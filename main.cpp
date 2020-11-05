@@ -1,9 +1,6 @@
 #include<iostream>
-#include "StreamReader.h"
-#include "MapBuilder.h"
-#include "StreamWriter.h"
 #include "header.h"
-#include "FromMapToList.h"
+#include "WordCounter.h"
 
 int main(int argc, char *argv[]) {
     if ((argc == 1) || ((argc == 2) && (argv[1][1] == 'h')) || ((argc == 2) && (argv[1][1] != 'h')) || (argc > 3)) {
@@ -24,15 +21,8 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    StreamReader reader(input);
-    MapBuilder builder;
-    FromMapToList converter;
-    while (reader.hasNext()) {
-        builder.put(reader.next());
-    }
-    converter.buildList(builder.getMap());
-    StreamWriter writer;
-    writer.write(output, converter.getList(), builder.getTotalFreq());
-
+    WordCounter counter;
+    counter.readFile(input);
+    counter.writeFile(output);
     return 0;
 }

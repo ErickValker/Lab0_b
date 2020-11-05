@@ -10,7 +10,7 @@ private:
     std::string curLine;
     int begin;
 public:
-    explicit StreamReader(std::istream &);
+    StreamReader(std::istream &);
 
     bool hasNext();
 

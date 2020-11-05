@@ -1,6 +1,6 @@
 #include "StreamReader.h"
 
-StreamReader::StreamReader(std::istream &in) : input(in) {
+StreamReader::StreamReader(std::istream &input) : input(input) {
 
 }
 
