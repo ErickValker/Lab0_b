@@ -12,6 +12,8 @@ void WordCounter::readFile(std::istream &input){
 }
 
 void WordCounter::writeFile(std::ostream &output) {
+    StreamWriter writer;
+    FromMapToList converter;
     converter.buildList(builder.getMap());
     writer.write(output, converter.getList(), builder.getTotalFreq());
 }

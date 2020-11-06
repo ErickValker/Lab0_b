@@ -12,8 +12,6 @@
 class WordCounter {
 private:
     MapBuilder builder;
-    FromMapToList converter;
-    StreamWriter writer;
 public:
     WordCounter();
 
